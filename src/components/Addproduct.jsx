@@ -5,7 +5,7 @@ const Addproduct = () => {
   return (
     <div>
         <Navbar/>
-        <div className="container bg-info p-5 mt-3 rounded">
+        <div className="container bg-secondary p-5 mt-3 rounded">
             <div className="row ">
                 <div className="col col-12">
 
