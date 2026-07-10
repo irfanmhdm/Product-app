@@ -1,167 +1,76 @@
-import React from 'react'
-import { Link } from 'react-router-dom'
+import React, { useState } from 'react'
 import Navbar from './Navbar'
 
-const Viewproducts = () => {
+const Viewbooks = () => {
+
+  const [data, changeData] = useState(
+
+    [
+      {
+        "name": "Cricket Bat", "avatar": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQte0da0g1196rM6RpemyhtuTyrOmfUqhHORK_kncjpBw&s=10",
+        "price": 5500
+      },
+      {
+        "name": "Leather Ball", "avatar": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSTF_C6xv8QwQDrod6M3F9mc_mVAm62kelAYuY79IeTPA&s=10",
+        "price": 600
+      },
+      {
+        "name": "Football", "avatar": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQjnzWcXScoUxeK0eC1iIltTtHpx-xlZf1m6FI_dvHfMQ&s=10",
+        "price": 2000
+      },
+      {
+        "name": "Badminton Racket", "avatar": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSqLcVEdHV5_i5Eu4xrCrOkXlMKj1TXpU7BYoNHtZD70A&s=10",
+        "price": 2500
+      },
+      {
+        "name": "Basketball", "avatar": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSi2OdBamw1KH4rX0fhAdvFtP7eDMx73E16HsLIFRFcFg&s=10",
+        "price": 3000
+      },
+
+    ]
+
+  )
+
   return (
     <div>
-
-         <Navbar/>
-
-      <div className="container mt-3">
+      <Navbar />
+      <div className="container mt-4">
         <div className="row">
 
-          <div className="col-12 col-sm-6 col-md-6 col-lg-4 col-xl-4 col-xxl-4 g-3">
-            <div className="card h-100">
-              <img
-                src="https://images.unsplash.com/photo-1552519507-da3b142c6e3d?w=600"
-                className="card-img-top"
-                style={{ height: "220px", objectFit: "cover" }}
-                alt="Toyota Fortuner"
-              />
+          {data.map(
+            (value, index) => {
 
-              <div className="card-body">
-                <h5 className="card-title">Toyota Fortuner</h5>
+              return (
 
-                <p className="card-text">
-                   <br />
-                  Category : SUV <br />
-                  Model : Fortuner <br />
-                  Transmission : Automatic <br />
-                  Fuel : Diesel <br />
-                 
-                </p>
-              </div>
-            </div>
-          </div>
+                <div className="col-12 col-sm-6 col-md-4 col-lg-4 g-3">
+                  <div className="card h-100">
+                    <img
+                      src={value.avatar}
+                      className="card-img-top"
+                      style={{ height: "300px", width : "350px", objectFit: "fill",padding:"10px" , marginLeft:"20px" }}
+                      alt="Items"
+                    />
+                    <div className="card-body text-center">
+                      <h5 className="card-title">{value.name}</h5>
+                      <p className="card-text">
+                         <br />
+                        {value.price}
+                      </p>
+                      <button className="btn btn-primary">Add to Cart</button>
+                    </div>
+                  </div>
+                </div>
+              )
+            }
+          )}
 
-          <div className="col-12 col-sm-6 col-md-6 col-lg-4 col-xl-4 col-xxl-4 g-3">
-            <div className="card h-100">
-              <img
-                src="https://images.unsplash.com/photo-1492144534655-ae79c964c9d7?w=600"
-                className="card-img-top"
-                style={{ height: "220px", objectFit: "cover" }}
-                alt="Honda City"
-              />
-
-              <div className="card-body">
-                <h5 className="card-title">Honda City</h5>
-
-                <p className="card-text">
-                   <br />
-                  Category : Sedan <br />
-                  Model : Honda City <br />
-                  Transmission : Manual <br />
-                  Fuel : Petrol <br />
-                  
-                </p>
-              </div>
-            </div>
-          </div>
-
-          <div className="col-12 col-sm-6 col-md-6 col-lg-4 col-xl-4 col-xxl-4 g-3">
-            <div className="card h-100">
-              <img
-                src="https://images.unsplash.com/photo-1502877338535-766e1452684a?w=600"
-                className="card-img-top"
-                style={{ height: "220px", objectFit: "cover" }}
-                alt="BMW X5"
-              />
-
-              <div className="card-body">
-                <h5 className="card-title">BMW X5</h5>
-
-                <p className="card-text">
-                  <br />
-                  Category : Luxury <br />
-                  Model : BMW X5 <br />
-                  Transmission : Automatic <br />
-                  Fuel : Petrol <br />
-                  
-                </p>
-              </div>
-            </div>
-          </div>
-
-          <div className="col-12 col-sm-6 col-md-6 col-lg-4 col-xl-4 col-xxl-4 g-3">
-            <div className="card h-100">
-              <img
-                src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT4s5raERycTaxvFWu0iMASFbswhpQUDkBEgRmpV1OB_g&s=10"
-                className="card-img-top"
-                style={{ height: "220px", objectFit: "cover" }}
-                alt="Hyundai Creta"
-              />
-
-              <div className="card-body">
-                <h5 className="card-title">Hyundai Creta</h5>
-
-                <p className="card-text">
-                   <br />
-                  Category : SUV <br />
-                  Model : Creta <br />
-                  Transmission : Manual <br />
-                  Fuel : Diesel <br />
-                  
-                </p>
-              </div>
-            </div>
-          </div>
-
-          <div className="col-12 col-sm-6 col-md-6 col-lg-4 col-xl-4 col-xxl-4 g-3">
-            <div className="card h-100">
-              <img
-                src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQrbECtxzpWbMfFk9dR4q17utZR2MVo0UHfeEyAP2uJOA&s=10"
-                className="card-img-top"
-                style={{ height: "220px", objectFit: "fill" }}
-                alt="Maruti Swift"
-              />
-
-              <div className="card-body">
-                <h5 className="card-title">Maruti Swift</h5>
-
-                <p className="card-text">
-                 <br />
-                  Category : Hatchback <br />
-                  Model : Swift <br />
-                  Transmission : Manual <br />
-                  Fuel : Petrol <br />
-                  
-                </p>
-              </div>
-            </div>
-          </div>
-
-          <div className="col-12 col-sm-6 col-md-6 col-lg-4 col-xl-4 col-xxl-4 g-3">
-            <div className="card h-100">
-              <img
-                src="https://images.unsplash.com/photo-1511919884226-fd3cad34687c?w=600"
-                className="card-img-top"
-                style={{ height: "220px", objectFit: "cover" }}
-                alt="Mercedes Benz"
-              />
-
-              <div className="card-body">
-                <h5 className="card-title">Mercedes Benz</h5>
-
-                <p className="card-text">
-                 <br />
-                  Category : Luxury <br />
-                  Model : Mercedes Benz <br />
-                  Transmission : Automatic <br />
-                  Fuel : Hybrid <br />
-                
-                </p>
-              </div>
-            </div>
-          </div>
 
         </div>
-
-      
-
       </div>
+
     </div>
+
   )
 }
 
-export default Viewproducts
+export default Viewbooks
